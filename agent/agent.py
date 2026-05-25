@@ -4,7 +4,8 @@ import time
 import socket
 import os
 
-BACKEND_URL = "http://localhost:5000/api/metrics"
+
+BACKEND_URL = os.environ.get("BACKEND_URL", "http://localhost:5000/api/metrics")
 AGENT_NAME = socket.gethostname()
 INTERVAL = 5  # seconds between each report
 

@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    container_name: devops-backend
+
+  agent:
+    build: ./agent
+    environment:
+      - BACKEND_URL=http://backend:5000/api/metrics
+    depends_on:
+      - backend
+    container_name: devops-agent
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    container_name: devops-frontend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
