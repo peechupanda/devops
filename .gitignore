@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Node
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+npm-debug.log
+
+# React build
+frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
