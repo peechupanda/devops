@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 
-const API = "http://localhost:5000/api/metrics";
+const API = "http://3.111.168.5:5000/metrics";
 
 function formatBytes(bytes) {
   return (bytes / (1024 ** 3)).toFixed(1) + " GB";
